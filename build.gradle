@@ -1,0 +1,29 @@
+plugins {
+    id 'eclipse'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ]
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.4.0'
+    
+    // https://github.com/oshi/oshi
+    implementation 'com.github.oshi:oshi-core:3.13.0'
+
+    // https://github.com/qos-ch/slf4j
+    implementation 'org.slf4j:slf4j-api:1.7.26'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+mainClassName = 'oshi.javafx.Main'

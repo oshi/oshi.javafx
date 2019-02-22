@@ -1,0 +1,11 @@
+# Gradle directories
+.gradle
+
+# Build directories
+build
+bin
+
+# Eclipse Metadata
+.project
+.classpath
+.settings
