@@ -36,54 +36,54 @@ import javafx.scene.control.Label;
 
 public class HeaderController {
 
-	@FXML
-	private Label oshiVersionLabel;
+    @FXML
+    private Label oshiVersionLabel;
 
-	@FXML
-	private Label javaVersionLabel;
+    @FXML
+    private Label javaVersionLabel;
 
-	@FXML
-	private void initialize() {
+    @FXML
+    private void initialize() {
 
-		// Set Java version
-		javaVersionLabel.setText(System.getProperty("java.version") + " " + System.getProperty("java.vendor"));
+        // Set Java version
+        javaVersionLabel.setText(System.getProperty("java.version") + " " + System.getProperty("java.vendor"));
 
-		// Set OSHI version in the background in case searching the classpath takes
-		// longer than expected
-		new Thread(new Task<String>() {
+        // Set OSHI version in the background in case searching the classpath takes
+        // longer than expected
+        new Thread(new Task<String>() {
 
-			{
-				setOnSucceeded(event -> oshiVersionLabel.setText(getValue()));
-			}
+            {
+                setOnSucceeded(event -> oshiVersionLabel.setText(getValue()));
+            }
 
-			@Override
-			public String call() throws Exception {
-				return readOshiVersion();
-			}
+            @Override
+            public String call() throws Exception {
+                return readOshiVersion();
+            }
 
-		}).start();
-	}
+        }).start();
+    }
 
-	/**
-	 * Read the OSHI version string from its manifest. <br>
-	 * <br>
-	 * Implementation note: this method searches each classpath manifest for the
-	 * entry: {@code Implementation-Vendor-Id: com.github.oshi}.
-	 * 
-	 * @return The OSHI version or {@code null} if not found
-	 * @throws IOException If some classpath manifest could not be read
-	 */
-	private String readOshiVersion() throws IOException {
-		Iterator<URL> it = getClass().getClassLoader().getResources("META-INF/MANIFEST.MF").asIterator();
-		while (it.hasNext()) {
-			try (InputStream in = it.next().openStream()) {
-				Attributes attributes = new Manifest(in).getMainAttributes();
-				if ("com.github.oshi".equals(attributes.getValue("Implementation-Vendor-Id"))) {
-					return attributes.getValue("Implementation-Version");
-				}
-			}
-		}
+    /**
+     * Read the OSHI version string from its manifest. <br>
+     * <br>
+     * Implementation note: this method searches each classpath manifest for the
+     * entry: {@code Implementation-Vendor-Id: com.github.oshi}.
+     * 
+     * @return The OSHI version or {@code null} if not found
+     * @throws IOException If some classpath manifest could not be read
+     */
+    private String readOshiVersion() throws IOException {
+        Iterator<URL> it = getClass().getClassLoader().getResources("META-INF/MANIFEST.MF").asIterator();
+        while (it.hasNext()) {
+            try (InputStream in = it.next().openStream()) {
+                Attributes attributes = new Manifest(in).getMainAttributes();
+                if ("com.github.oshi".equals(attributes.getValue("Implementation-Vendor-Id"))) {
+                    return attributes.getValue("Implementation-Version");
+                }
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 }

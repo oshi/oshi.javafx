@@ -28,43 +28,43 @@ import javafx.scene.control.TitledPane;
 
 public class MenuController {
 
-	@FXML
-	private TitledPane baseboard;
+    @FXML
+    private TitledPane baseboard;
 
-	@FXML
-	private TitledPane display;
+    @FXML
+    private TitledPane display;
 
-	@FXML
-	private TitledPane memory;
+    @FXML
+    private TitledPane memory;
 
-	@FXML
-	private TitledPane operating_system;
+    @FXML
+    private TitledPane operating_system;
 
-	@FXML
-	private TitledPane network;
+    @FXML
+    private TitledPane network;
 
-	@FXML
-	private TitledPane power;
+    @FXML
+    private TitledPane power;
 
-	@FXML
-	private TitledPane process;
+    @FXML
+    private TitledPane process;
 
-	@FXML
-	private TitledPane processor;
+    @FXML
+    private TitledPane processor;
 
-	@FXML
-	private TitledPane sensor;
+    @FXML
+    private TitledPane sensor;
 
-	@FXML
-	private TitledPane sound_card;
+    @FXML
+    private TitledPane sound_card;
 
-	@FXML
-	private TitledPane storage;
+    @FXML
+    private TitledPane storage;
 
-	@FXML
-	private TitledPane usb;
+    @FXML
+    private TitledPane usb;
 
-	@FXML
-	private void initialize() {
-	}
+    @FXML
+    private void initialize() {
+    }
 }
