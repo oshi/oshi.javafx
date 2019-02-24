@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="202.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane fx:id="baseboard" expanded="false" styleClass="category" text="Baseboard">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="display" expanded="false" styleClass="category" text="Displays">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="memory" expanded="false" styleClass="category" text="Memory">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="operating_system" expanded="false" styleClass="category" text="Operating System">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="network" expanded="false" styleClass="category" text="Network">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="power" expanded="false" styleClass="category" text="Power">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="process" expanded="false" styleClass="category" text="Processes">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="processor" expanded="false" styleClass="category" text="Processor">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="sensor" expanded="false" styleClass="category" text="Sensors">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="sound_card" expanded="false" styleClass="category" text="SoundCards">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="storage" expanded="false" focusTraversable="false" styleClass="category" text="Storage">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+      <TitledPane fx:id="usb" expanded="false" styleClass="category" text="USB">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" />
+        </content>
+      </TitledPane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets left="15.0" />
+   </padding>
+</VBox>
