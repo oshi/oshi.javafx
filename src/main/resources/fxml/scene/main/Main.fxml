@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <fx:include fx:id="header" source="Header.fxml" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <fx:include fx:id="menu" source="Menu.fxml" BorderPane.alignment="TOP_CENTER" />
+   </left>
+</BorderPane>

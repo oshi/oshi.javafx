@@ -1,0 +1,7 @@
+#header {
+    -fx-background-image: url("/image/scene/main/header.png");
+}
+
+.category > .title > .arrow-button .arrow {
+    -fx-shape: "";
+}

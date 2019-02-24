@@ -29,7 +29,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+/**
+ * Application entry.
+ */
+public final class Main extends Application {
 
     public static void main(String[] args) {
         Application.launch(Main.class);
@@ -37,8 +40,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent node = new FXMLLoader(Main.class.getResource("/fxml/Main.fxml")).load();
-        stage.setScene(new Scene(node, 500, 500 * 0.618));
+        Parent node = new FXMLLoader(Main.class.getResource("/fxml/scene/main/Main.fxml")).load();
+        Scene scene = new Scene(node, 888, 888);
+        scene.getStylesheets().add("/css/default.css");
+        stage.setScene(scene);
         stage.show();
     }
 }
