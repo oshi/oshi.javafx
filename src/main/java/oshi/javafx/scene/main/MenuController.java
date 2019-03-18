@@ -23,48 +23,73 @@
  */
 package oshi.javafx.scene.main;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TitledPane;
+import java.util.List;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.fxml.FXML;
+
+/**
+ * The controller for the main menu which contains top-level categories.
+ */
 public class MenuController {
 
     @FXML
-    private TitledPane baseboard;
+    private MenuCategory baseboard;
 
     @FXML
-    private TitledPane display;
+    private MenuCategory display;
 
     @FXML
-    private TitledPane memory;
+    private MenuCategory memory;
 
     @FXML
-    private TitledPane operating_system;
+    private MenuCategory operating_system;
 
     @FXML
-    private TitledPane network;
+    private MenuCategory network;
 
     @FXML
-    private TitledPane power;
+    private MenuCategory power;
 
     @FXML
-    private TitledPane process;
+    private MenuCategory process;
 
     @FXML
-    private TitledPane processor;
+    private MenuCategory processor;
 
     @FXML
-    private TitledPane sensor;
+    private MenuCategory sensor;
 
     @FXML
-    private TitledPane sound_card;
+    private MenuCategory sound_card;
 
     @FXML
-    private TitledPane storage;
+    private MenuCategory storage;
 
     @FXML
-    private TitledPane usb;
+    private MenuCategory usb;
+
+    /**
+     * The currently selected menu item.
+     */
+    private ObjectProperty<MenuCategory> selected = new SimpleObjectProperty<>();
 
     @FXML
     private void initialize() {
+
+        // Add listeners to ensure only one category appears selected at a time
+        selected.addListener((p, o, n) -> {
+            if (o != null)
+                o.setExpanded(false);
+        });
+
+        for (MenuCategory item : List.of(baseboard, display, memory, operating_system, network, power, process,
+                processor, sensor, sound_card, storage, usb)) {
+            item.expandedProperty().addListener((p, o, n) -> {
+                if (item.isExpanded())
+                    selected.set(item);
+            });
+        }
     }
 }
